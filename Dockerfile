@@ -1,9 +1,18 @@
-FROM python:3.8
-WORKDIR /app
-COPY . /app
-RUN pip freeze > requirements.txt
-RUN pip install -r requirements.txt
-#EXPOSE 80/tcp
+# Base image
+FROM python:3.9-slim
+
+# Working directory
+WORKDIR /main
+
+# Copy requirements file and install dependencies
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the project files
+COPY . .
+
+# Expose the server port
 EXPOSE 8000
-#EXPOSE 443/tcp
-CMD ["python", "main.py", "runserver", "0.0.0.0:8000"]
+
+# Command to start the server
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "main.py"]
