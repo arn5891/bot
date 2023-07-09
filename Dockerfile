@@ -5,6 +5,7 @@ FROM python:3.9-slim
 WORKDIR /main
 
 # Copy requirements file and install dependencies
+RUN pip freeze > requirements.txt
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
