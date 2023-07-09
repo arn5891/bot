@@ -1,4 +1,3 @@
-$ docker pull ghcr.io/channel-mirrors/conda-forge/noarch/discord.py:2.2.3-pyhd8ed1ab_0
 import discord
 
 intents = discord.Intents.default()
