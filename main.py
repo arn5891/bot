@@ -1,4 +1,5 @@
 import discord
+import os
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -20,4 +21,4 @@ async def on_message(message):
     else:
         await message.channel.send('idk what that was bruh what did you say')
 
-client.run(secrets.TOKEN)
+client.run(os.getenv("TOKEN"))
