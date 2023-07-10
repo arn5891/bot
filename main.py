@@ -20,4 +20,4 @@ async def on_message(message):
     else:
         await message.channel.send('idk what that was bruh what did you say')
 
-client.run(secret.TOKEN)
+client.run(secrets.TOKEN)
