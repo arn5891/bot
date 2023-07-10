@@ -21,4 +21,4 @@ async def on_message(message):
     else:
         await message.channel.send('idk what that was bruh what did you say')
 
-client.run(os.getenv("TOKEN"))
+client.run(str(os.getenv("TOKEN")))
