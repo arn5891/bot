@@ -10,7 +10,7 @@ tree = app_commands.CommandTree(client)
 test = []
 @tree.command(name = "add", description = "add 'a' to memory")
 async def first(interaction):
-    test.push("a")
+    test.append("a")
 
 @tree.command(name = "print", description = "print memory")
 async def sec(interaction):
