@@ -7,14 +7,32 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 tree = app_commands.CommandTree(client)
 
+class svr:
+    def __init__(self,id):
+        self.id = id
+        self.ppl = []
+        self.mem = []
+        
 test = []
 @tree.command(name = "add", description = "add 'a' to memory")
 async def first(interaction):
-    test.append("a")
+    found == False
+    for a in range(len(test)):
+        if test[a].id == discord.Message.guild:
+            found = True
+            test[a].mem.append('a')
+    if found = False:
+        test.append(svr(discord.Message.guild))
+        for a in range(len(test)):
+            if test[a].id == discord.Message.guild:
+                test[a].mem.append('a')
+    
 
 @tree.command(name = "print", description = "print memory")
 async def sec(interaction):
-    await interaction.response.send_message(test)
+    for a in range(len(test)):
+        if test[a].id == discord.Message.guild:
+            await interaction.response.send_message(test[a].mem)
 
 @client.event
 async def on_ready():
